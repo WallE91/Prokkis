@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "server side of application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "author": "Ville",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WallE91/prokkis/issues"
+  },
+  "homepage": "https://github.com/WallE91/prokkis#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.8",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0"
+  }
+}
