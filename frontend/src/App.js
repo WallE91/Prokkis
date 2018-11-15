@@ -55,7 +55,7 @@ class App extends Component {
       headers: {'Authorization': 'Bearer ' + accessToken}
     }).then(response => response.json())
     .then(data => this.setState({
-        playlists: data.items.map(item => {    
+        playlists:(data.items || []).map(item => {    
           //console.log(data.items)     
           return { 
             name: item.name, 
