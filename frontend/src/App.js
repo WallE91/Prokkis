@@ -5,6 +5,7 @@ import queryString from 'query-string';
 import Filter from './components/Filter';
 import PlayList from './components/PlayList';
 import PlayListCounter from './components/PlayListCounter';
+import Tracks from './components/Tracks';
 
 
 
@@ -47,7 +48,8 @@ class App extends Component {
     }).then(response => response.json())
     .then(data => this.setState({
         user: {
-          name: data.display_name
+          name: data.display_name,
+          country: data.country,
         }
     }))
 
@@ -60,6 +62,7 @@ class App extends Component {
           return { 
             name: item.name, 
             imageUrl: item.images[0].url,
+            type: item.description,
             songs: []
           }
         })
@@ -83,6 +86,7 @@ class App extends Component {
         {this.state.user ?
         <div>
           <h1>{this.state.user.name}'s Playlists</h1>
+          <p>{}</p>
           <PlayListCounter playlists={playlistToRender}/>
           <Filter onTextChange={text => {
             this.setState({filterString: text})
@@ -91,7 +95,8 @@ class App extends Component {
               <PlayList playlist={playlist}/>
             )}
         </div> :  <button onClick={() => window.location = 'http://localhost:8888/login' }
-                    style={{padding :'10px', fontSize :'24px', marginTop :'10px'}}>Sign in with Spotify</button>
+                    style={{padding :'10px', fontSize :'24px', marginTop :'10px'}}>Sign in with Spotify
+                  </button>
         }
       </div>
     );
