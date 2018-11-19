@@ -49,7 +49,7 @@ class App extends Component {
     .then(data => this.setState({
         user: {
           name: data.display_name,
-          country: data.country,
+          country: data.country
         }
     }))
 
@@ -86,7 +86,7 @@ class App extends Component {
         {this.state.user ?
         <div>
           <h1>{this.state.user.name}'s Playlists</h1>
-          <p>{}</p>
+          <Tracks />
           <PlayListCounter playlists={playlistToRender}/>
           <Filter onTextChange={text => {
             this.setState({filterString: text})
