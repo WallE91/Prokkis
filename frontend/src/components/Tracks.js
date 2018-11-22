@@ -6,7 +6,7 @@ export default class Tracks extends React.Component {
 
         return (
           <div>
-            <h3>Tracks Hello!</h3>
+            
           </div>
         );
         
